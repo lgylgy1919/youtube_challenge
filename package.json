@@ -1,0 +1,19 @@
+{
+  "name": "youtube_challenge",
+  "version": "1.0.0",
+  "description": "cloning youtube with vanilla and node js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lgylgy1919/youtube_challenge.git"
+  },
+  "author": "Jaeyoon Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lgylgy1919/youtube_challenge/issues"
+  },
+  "homepage": "https://github.com/lgylgy1919/youtube_challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
