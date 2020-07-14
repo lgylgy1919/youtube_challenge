@@ -16,6 +16,9 @@
       {
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "env": {
+      "browser": "true"
+    }
   }
 }
