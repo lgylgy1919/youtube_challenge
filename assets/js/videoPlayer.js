@@ -1,6 +1,6 @@
 const videoContainer = document.getElementById("jsVideoPlayer");
 const videoPlayer = document.querySelector("#jsVideoPlayer video");
-const playBtn = document.getElementById("#jsPlayButton");
+const playBtn = document.getElementById("jsPlayButton");
 const volumeBtn = document.getElementById("jsVolumeBtn");
 const fullScrnBtn = document.getElementById("jsFullScreen");
 const currnetTime = document.getElementById("currentTime");
@@ -13,7 +13,7 @@ function handlePlayClick() {
     playBtn.innerHTML = '<i class="fas fa-pause"></i>';
   } else {
     videoPlayer.pause();
-    playBtn.innerHTML = '<i class="fas fa-player"></i>';
+    playBtn.innerHTML = '<i class="fas fa-play"></i>';
   }
 }
 
@@ -54,7 +54,7 @@ function goFullScreen() {
     videoContainer.msRequestFullScreen();
   }
   videoContainer.webkitRequestFullscreen();
-  fullScrnBtn.innerHTML = '<i class="fas fa-copress"></i>';
+  fullScrnBtn.innerHTML = '<i class="fas fa-compress"></i>';
   fullScrnBtn.removeEventListener("click", goFullScreen);
   fullScrnBtn.addEventListener("click", exitFullScreen);
 }
@@ -66,16 +66,17 @@ const formatDate = (seconds) => {
   let totalSeconds = secondsNumber - hours * 3600 - mintues * 60;
 
   if (hours < 10) {
-    hours = `'${hours}`;
+    hours = `0${hours}`;
   }
   if (mintues < 10) {
     mintues = `0${seconds}`;
   }
   if (seconds < 10) {
-    totalSeconds = `0${seconds}`;
+    totalSeconds = `0${totalSeconds}`;
   }
   return `${hours}:${minutes}:${totalSeconds}`;
 };
+
 function getCurrentTIme() {
   currnetTime.innerHTML = formatDate(Math.floor(videoPlayer.currentTime));
 }
@@ -104,8 +105,9 @@ function handleDrag(event) {
     volumeBtn.innerHTML = `<i class="fas fa-volume-off"></i>`;
   }
 }
+
 function init() {
-  videoPlayer.volume = "0.5";
+  videoPlayer.volume = 0.5;
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScrnBtn.addEventListener("click", goFullScreen);
@@ -114,6 +116,6 @@ function init() {
   volumeRange.addEventListener("input", handleDrag);
 }
 
-if (videoConatiner) {
+if (videoContainer) {
   init();
 }
